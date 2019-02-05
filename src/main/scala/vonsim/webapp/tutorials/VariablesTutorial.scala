@@ -77,7 +77,7 @@ lo haremos con valores hexadecimales</p>
 """,UIConfig.enableAll,Some("org 5h\n;las variables van aqui\norg 2000h\nhlt\nend")
 )
 
-,TutorialStep("Valos hexadecimales"
+,TutorialStep("Valores hexadecimales"
 ,"""
 <p> Como vimos, los valores hexadecimales requieren una <em>h</em> al final para
 especificar este sistema.</p>
@@ -157,7 +157,7 @@ razones históricas, <strong>little-endian</strong>. </p>
 ,"""
 <p> Podemos definir varias variables de tipo dw también, y también se ubicarán secuencialmente.</p>
 
-<p class="exercise"> Define las variables <code>vida</code>, <code>mana</code> y <code>energía</code>, en ese orden, de tipo dw,
+<p class="exercise"> Define las variables <code>vida</code>, <code>mana</code> y <code>energia</code>, en ese orden, de tipo dw,
 con valores iniciales 32h, 15Dh y 1A4Bh, respectivamente.</p>
 
 <p class="exercise"> Ejecuta el programa y observa el valor de las celdas 5h a Ah.
@@ -248,7 +248,7 @@ de la dirección 12h.</p>
 
 <p class="exercise"> Quita el <em>h</em> de la sentencia <code>org 12h</code> y ejecuta
 el programa. ¿Dónde se ubican las variables ahora?</p> 
-<p class="answer">Las variables se ubican a partir de la dirección 12, o sea 0Bh.</p>
+<p class="answer">Las variables se ubican a partir de la dirección 12, o sea 0Ch.</p>
 """,UIConfig.enableAll,Some("org 12h\ntemperatura dw 2Ah\nviento db 8Ah\norg 2000h\nhlt\nend")
 )
 
@@ -287,10 +287,10 @@ Ejecuta el programa y busca el valor de la celda de memoria donde se cargó</p>
 
 <p class="exercise"> Intenta poner un valor mayor a 255 en la variable edad. ¿Qué sucede? </p>
 
-<p>Las variables de tipo dw tienen un rango de 0 a 65536 para valores sin signo,
+<p>Las variables de tipo dw tienen un rango de 0 a 65535 para valores sin signo,
  ya que disponen de 16_ bits.</p>
 
-<p class="exercise"> Intenta poner un valor mayor a 65536 en la variable distancia. ¿Qué sucede? </p>
+<p class="exercise"> Intenta poner un valor mayor a 65535 en la variable distancia. ¿Qué sucede? </p>
 
 <p> En ambos casos, como son valores positivos, se codifican en el sistema Binario Sin Signo 
 (BSS) al guardarse en la memoria.</p>
@@ -308,7 +308,7 @@ el programa. ¿Qué se almacena en la memoria en la dirección 5h? ¿Por qué?</
 
 <p class="answer"> Se almacena el valor F6h, o sea 11110110b, que es la codificación
 en Complemento a 2_ (CA2) del número -10. Hay que tener en cuenta que tanto el número
-119 como el número -10 se codifican como 11110110b. Por ende es el programador quien
+246 como el número -10 se codifican como 11110110b. Por ende es el programador quien
 debe saber de antemano como interpretar esa cadena de bits, si en CA2 o en BSS. </p>
 
 """,UIConfig.enableAll,Some("org 5h\ntemperatura db 10\norg 2000h\nhlt\nend")
@@ -360,7 +360,7 @@ de la celda debería ser igual al valor anterior de la misma.</p>
 
 ,TutorialStep("Vectores de db"
 ,"""
-<p>También puedes declarar una variable una variable con varios valores, es decir, un vector.
+<p>También puedes declarar una variable con varios valores, es decir, un vector.
  En ese caso la sintaxis es <code>nombre tipo valor1, valor2, valor3, ...</code> </p>
 <p> Los valores se guardan uno seguido del otro en la memoria.</p>
 
